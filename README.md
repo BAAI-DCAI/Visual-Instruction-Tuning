@@ -1,1 +1,1 @@
-# Vision-Language-Instruction-Tuning
+# Scaling up Visual Instruction Tuning
