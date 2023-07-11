@@ -73,10 +73,10 @@ Some examples are shown as follows.
 If you find this repository helpful, please cite the paper below.
 
 ```bibtex
-@misc{zhao2023svit,
+@article{zhao2023svit,
       title={SVIT: Scaling up Visual Instruction Tuning}, 
       author={Zhao, Bo and Wu, Boya and Huang, Tiejun},
-      publisher={arXiv:2307.04087},
-      year={2023},
+      journal={arXiv preprint arXiv:2307.04087},
+      year={2023}
 }
 ```
