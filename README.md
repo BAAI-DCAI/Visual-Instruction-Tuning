@@ -1,7 +1,7 @@
 # Scaling up Visual Instruction Tuning
 *Scale up visual instruction tuning to millions by GPT-4.*
 
-[[Paper](https://arxiv.org/pdf/2307.04087.pdf)][Data (will be released soon!)]
+[[Paper](https://arxiv.org/pdf/2307.04087.pdf)][[Data](https://huggingface.co/datasets/BAAI/SVIT)]
 
 ## Introduction
 We Scale up Visual Instruction Tuning (SVIT) and propose a large-scale dataset with 3.2 million informative instruction tuning data, including 1.6M conversation QA pairs, 1.6M complex reasoning QA pairs and 106K detailed descriptions, by prompting GPT-4 with the abundant manual annotations of image.
@@ -26,12 +26,12 @@ Inspired by LLaVA, we design three tasks and prompt the language-only GPT-4 Chat
 For rich diversity, we randomly sample an instruction for detail description task, e.g., "can you describe the image in detail".
 The complete list of the alternative instructions can be found in this [file](./data/questions.txt). 
 
-<!--|   |QA|File|
+|   |QA|File|
 |---|---|---|
-|Conversation|1.6M|[conversation.zip]()|
-|Complex reasoning|1.6M|[complex_reasoning.zip]()|
-|Detail description|106K|[detail_description.zip]()|
-|All|3.2M|[svit.zip]()|-->
+|Conversation|1.6M|[conversation.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/conversation.zip)|
+|Complex reasoning|1.6M|[complex_reasoning.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/complex_reasoning.zip)|
+|Detail description|106K|[detail_description.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/detail_description.zip)|
+|All|3.2M|[svit.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/svit.zip)|
 
 The following figure illustrates an example input and the GPT-4 output for each task.
 Note that the image is only shown here for reference and not provided to GPT-4.
@@ -41,8 +41,6 @@ Note that the image is only shown here for reference and not provided to GPT-4.
       <figcaption align = "center">Figure 1: The example input to GPT-4 and the responses for three tasks.
       </figcaption>
 </p>
-
-**The dataset will be released soon!**
 
 ## Evaluation
 
