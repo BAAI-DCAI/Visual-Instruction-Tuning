@@ -4,13 +4,13 @@
 [[Paper](https://arxiv.org/pdf/2307.04087.pdf)][[Data](https://huggingface.co/datasets/BAAI/SVIT)]
 
 ## Introduction
-We Scale up Visual Instruction Tuning (SVIT) and propose a large-scale dataset with 3.2 million informative instruction tuning data, including 1.6M conversation QA pairs, 1.6M complex reasoning QA pairs and 106K detailed descriptions, by prompting GPT-4 with the abundant manual annotations of image.
+We Scale up Visual Instruction Tuning (SVIT) and propose a large-scale dataset with 4.2 million informative instruction tuning data, including 1.6M conversation QA pairs, 1.6M complex reasoning QA pairs, 106K detailed descriptions and 1.0M referring QA pairs, by prompting GPT-4 with the abundant manual annotations of image.
 
 |Dataset|Image|Object BBox|Region Description|Image Caption|Instruction Question|Response Answer|GPT|
 |---|---|---|---|---|---|---|---|
 |MiniGPT-4|3.5K|-|-|-|4|3.5K|GPT-3.5|
 |LLaVA|81.5K|600K|-|404.7K|150K|150K|GPT-4|
-|SVIT|108.1K|3.8M|5.4M|257.6K|3.2M|3.2M|GPT-4|
+|SVIT|108.1K|3.8M|5.4M|257.6K|4.2M|4.2M|GPT-4|
 
 ## Dataset
 We build SVIT based on Visual Genome dataset that comprises 108,077 images with dense annotations within each image, including region descriptions, objects, attributes, relationships etc.
@@ -22,6 +22,7 @@ Inspired by LLaVA, we design three tasks and prompt the language-only GPT-4 Chat
 - **Conversation.** We prompt GPT-4 to design 3 conversations between a person and GPT-4 talking about the image. Each conversation should include 5 question and answer pairs (QAs). The content of the conversation should be logically connected. GPT-4 thinks about the topic first and then generates the conversation according to the topic. The topics can be about the visual perception, reasoning, event planning, etc. 
 - **Complex reasoning.** 15 complex reasoning QAs about each image are generated using GPT-4. The questions can be asking why things happen that way, suggestions to the people in the image, etc. When providing the answer to a complex question, we prompt GPT-4 to think step by step and include reasoning details in the answer.
 - **Detail description.** We use GPT-4 to describe the image in detail. The description may include the people or object appearance, what people or objects are doing, object count, object position, background details, etc.
+- **Referring QAs.** We prompt GPT-4 to create 10 question and answer pairs of specific regions in the image. When referring to any object in the question or answer, always wrap it with prefix "\<st\>", suffix "\<ed\>" and attach its bounding box after it, in the format of "\<st\>object\<ed\> [x1, y1, x2, y2]". If multiple objects are referred to, attach all the corresponding bounding boxes after them, e.g., "\<st\>objects\<ed\> [x1, y1, x2, y2], [x1, y1, x2, y2]".
 
 For rich diversity, we randomly sample an instruction for detail description task, e.g., "can you describe the image in detail".
 The complete list of the alternative instructions can be found in this [file](./data/questions.txt). 
@@ -31,14 +32,15 @@ The complete list of the alternative instructions can be found in this [file](./
 |Conversation|1.6M|[conversation.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/conversation.zip)|
 |Complex reasoning|1.6M|[complex_reasoning.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/complex_reasoning.zip)|
 |Detail description|106K|[detail_description.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/detail_description.zip)|
-|All|3.2M|[svit.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/svit.zip)|
+|Referring QAs|1.0M|[referring_qa.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/referring_qa.zip)|
+|All|4.2M|[svit.zip](https://huggingface.co/datasets/BAAI/SVIT/blob/main/data/svit.zip)|
 
 The following figure illustrates an example input and the GPT-4 output for each task.
 Note that the image is only shown here for reference and not provided to GPT-4.
 
 <p align="center">
-      <img src="./images/example.jpg" width="100%">
-      <figcaption align = "center">Figure 1: The example input to GPT-4 and the responses for three tasks.
+      <img src="./images/example.png" width="100%">
+      <figcaption align = "center">Figure 1: The example input to GPT-4 and the responses for four tasks. The colored phrases in referring QAs correspond with bounding boxes of that color in the image.
       </figcaption>
 </p>
 
