@@ -46,7 +46,7 @@ Note that the image is only shown here for reference and not provided to GPT-4.
 
 ## Evaluation
 
-To validate the superiority of SVIT dataset, we re-implement the instruction tuning of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and [LLaVA](https://github.com/haotian-liu/LLaVA) models on SVIT dataset, and then compare to those models tuned on their own instruction datasets. For fair comparison, we follow their training/testing protocols and use the same hyper-parameters. We believe that better performance can be achieved if improve the training protocol and carefully tune the hyper-parameters.
+To validate the superiority of SVIT dataset, we re-implement the instruction tuning of [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and [LLaVA](https://github.com/haotian-liu/LLaVA) models on SVIT dataset, and then compare to those models tuned on their own instruction datasets. For fair comparison, we follow their training/testing protocols and use the same hyper-parameters. We believe that better performance can be achieved by improving the training protocol and carefully tuning the hyper-parameters.
 
 Some examples are shown as follows.
 
@@ -66,6 +66,13 @@ Some examples are shown as follows.
 <p align="center">
       <img src="./images/llava-case4.jpg" width="100%">
       <figcaption align = "center">Figure 4: Conversation. "LLaVA" and "SVIT" denote the two models trained on datasets of LLaVA and our SVIT respectively. The model trained on SVIT identifies the number of cars covered in snow correctly and proposes suggestions considerately.
+      </figcaption>
+</p>
+
+<p align="center">
+      <img src="./images/llava-referring1.png" width="100%">
+      <img src="./images/llava-referring2.png" width="100%">
+      <figcaption align = "center">Figure 5: Referring QAs. SVIT denote the model trained on the referring QAs subset of SVIT. The model is able to provide the coordinates of mentioned objects in the response.
       </figcaption>
 </p>
 
