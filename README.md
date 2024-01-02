@@ -1,8 +1,8 @@
-# Scaling up Visual Instruction Tuning
+# SVIT: Scaling up Visual Instruction Tuning
 
 *Scale up visual instruction tuning to millions by GPT-4.*
 
-[[Paper](https://arxiv.org/pdf/2307.04087.pdf)][[Data](https://huggingface.co/datasets/BAAI/SVIT)]
+📖 [arXiv](https://arxiv.org/pdf/2307.04087.pdf) | 🤗 [Data](https://huggingface.co/datasets/BAAI/SVIT) | ✨ [Models](#model-zoo)
 
 ## Introduction
 
