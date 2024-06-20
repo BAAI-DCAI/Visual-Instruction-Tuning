@@ -2,7 +2,7 @@
 
 *Scale up visual instruction tuning to millions by GPT-4.*
 
-📖 [arXiv](https://arxiv.org/pdf/2307.04087.pdf) | 🤗 [Data](https://huggingface.co/datasets/BAAI/SVIT) | ✨ [Models](#model-zoo)
+📖 [arXiv](https://arxiv.org/pdf/2307.04087.pdf) | 🤗 [Data](https://huggingface.co/datasets/BAAI/SVIT) |  🤖 [Data](https://www.modelscope.cn/datasets/BAAI/SVIT) | ✨ [Models](#model-zoo)
 
 ## Introduction
 
